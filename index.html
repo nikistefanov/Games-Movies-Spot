@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Games and movies spot</title>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="shortcut icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="bower_components/five-star-rating/css/rating.min.css">
+  <link rel="stylesheet" href="bower_components/toastr/toastr.css">
+  <script src="https://www.parsecdn.com/js/parse-1.6.12.min.js"></script>
+  </script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <div id="wrapper" class="container">
+    <div id="carousel" class="row">
+      <header id="header" class="row">
+        <div class="col-md-4 user-nav pull-right">
+
+        </div>
+      </header>
+      <nav id="nav" class="navbar navbar-default row">
+        <div class="container-fluid col-md-12">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand active" href="#/home">
+              <img src="images/logo.png" alt="GM Spot" id="logo">
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav pull-right">
+              <li><a href="#/home">Home</a></li>
+              <li><a href="#/games">Games</a></li>
+              <li><a href="#/movies">Movies</a></li>
+              <li><a href="#/books">Location</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div id="site-slogan" class="row">
+        <h3 id="site-slogan-title">
+          Your place for buying, selling or giving away games, movies and books!
+        </h3>
+        <p id="site-slogan-text">
+          Are you bored with your current games, sell them and buy new ones.
+        </p>
+        <a id="site-slogan-btn" class="btn btn-success" href="#/games">Try now</a>
+      </div>
+    </div>
+    <div class='loader-top'>
+      <div class='loader'>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--dot'></div>
+        <div class='loader--text'></div>
+      </div>
+    </div>
+    <div id="main">
+      <div id="products">
+
+      </div>
+    </div>
+    <footer id="footer" class="row">
+      <p class="copy">&copy; GM-Spot by Nikolay Stefanov</p>
+    </footer>
+  </div>
+
+  <!-- Libs -->
+  <script src="node_modules/babel-core/browser.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/sammy/lib/sammy.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/handlebars/handlebars.js"></script>
+  <script src="bower_components/system.js/dist/system.js"></script>
+  <script src="bower_components/toastr/toastr.js"></script>
+  <script src="bower_components/five-star-rating/js/dist/rating.min.js"></script>
+
+  <!-- Controllers -->
+  <script src="app/scripts/controllers/games.js"></script>
+  <script src="app/scripts/controllers/users.js"></script>
+  <script src="app/scripts/controllers/movies.js"></script>
+
+  <!-- Setup -->
+  <script src="app/app.js"></script>
+  <script src="app/scripts/converter.js"></script>
+  <script src="app/scripts/data.js"></script>
+  <script src="app/scripts/eventLoader.js"></script>
+  <script src="app/scripts/location.js"></script>
+  <script src="app/scripts/notifier.js"></script>
+  <script src="app/scripts/templates.js"></script>
+  <script src="app/scripts/validate.js"></script>
+  <script src="app/templates/templatesFunctionality.js"></script>
+
+  <!-- <script type="text/babel">
+    System.config({
+      baseURL: 'app',
+      transpiler: 'babel',
+      map: {
+        babel: '/node_modules/babel-core/browser.js',
+        sammy: '/bower_components/sammy/lib/sammy.js',
+        jquery: '/bower_components/jquery/dist/jquery.js',
+        bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
+        handlebars: '/bower_components/handlebars/handlebars.js'
+      }
+    });
+    System.import('app.js');
+  </script> -->
+</body>
+
+</html>

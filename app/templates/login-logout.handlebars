@@ -1,0 +1,24 @@
+<ul class="my-nav">
+	{{#if this}}
+		<li>Hello,
+			<strong>{{this}}</strong>
+		</li>
+		<!-- <li>
+			<i class="glyphicon glyphicon-heart"></i>
+			<a href="#">Wishlist</a></li>
+		<li>
+			<i class="glyphicon glyphicon-shopping-cart"></i>
+			<a href="#">Basket</a>
+			<span class="badge">2</span>
+		</li> -->
+		<li><a id="btn-logout" href="#/">Logout</a></li>
+	{{else}}
+		<li>
+			<i class="glyphicon glyphicon-lock"></i>
+			<a href="#/login">Login</a>
+		</li>
+		<li>
+			<i class="glyphicon glyphicon-user"></i>
+			<a href="#/register">Register</a></li>
+	{{/if}}
+</ul>

@@ -1,0 +1,72 @@
+## lecture to help with the site - GM Spot
+http://telerikacademy.com/Courses/LectureResources/Video/6750/%D0%92%D0%B8%D0%B4%D0%B5%D0%BE-3-%D1%81%D0%B5%D0%BF%D1%82%D0%B5%D0%BC%D0%B2%D1%80%D0%B8-2015-%D0%95%D0%B2%D0%BB%D0%BE%D0%B3%D0%B8
+## site for help:
+http://www.elegantthemes.com/demo/?theme=MyCuisine
+
+## in bootstrap.js at 732! That's the row that triggers the dropdown!
+
+## to install http server
+> npm install -g http-server
+
+next in the directory where the html is - cmd --> http-server -p 1201
+and then in the browser - localhost:1201
+thi is to skip cross origin
+
+## when using sammy and get errors all the time cuz of jquery, go to the bower_components/sammy/lib/sammy.js and type import 'jquery' (or the whole path to jquery.js)
+
+Answered:
+## Width да остане 960px а не да слагам насвякъде margin и padding
+## Home как да се центрират 3-те sections
+
+
+## padashtoto menu - z-index - float na ul none i width i position absolute na gorniqt element
+## Когато се хавърне item от navbar-a height да е по малък (показано в условието) - da se dobavi edin class current na active page-a
+## Когато логото се хавърне да не се променя  - edin class selected i na nego font-style: italic; - pred a i sled nego drug content
+## Как да се използват два background-a за един (с opacity) - sus zapetaika
+## Carousel - да се махнат стрелките и да се сложат точки (js не работи от началото - трябва да се превърти за да започне да ги мести) - carousel-indicators това са точките
+## "Try now" бутона на home-page когато се променя резолюцията да не изчезва, както и текста да не е толкова голям - media query?
+## Add game да е скрито ако не си логнат
+## Add game да се ховърва не само като мишката е върху текста
+## Select за platform -> да се избира задължително (да пише choose и когато се избере да изчезва choose)
+## Titles в Add game - span да е 40%, а не да чупи на всички input-и ширината
+## Да няма разлика в кутииките на игрите (само с height и width ли става? А adaptive ли е?)
+## Как да използвам ID на продукта за да го отделя в нов адрес и там да дам повече инфо за него. Как да заредя темплейта с handlebars само за този даден продукт?
+
+## za carousel background: url("image ot photoshop") no-repeat bottom center
+## да преместя бекграунда на хавър на текущ пейдж
+
+
+>>>TODO<<<
+- background-a da se smenq na home, games, movies suglasno psd-to
+- helper za handlebars za home page da listva poslednite 3 igri i filmi v dvete koloni i da se naglasi location
+- da se opravqt routes da se pokazvat kato se obikalq po linkovete (breadcrumbs css)
+- da se dobavqt start (rating) v carousel
+
+*** ako ostane vreme ***
+- edin button v login-logout My products - tam da sa games, movies, books --> handlebars template
+{{#games}}
+  {{#if isOwner}}
+    da listva vsi4ki produkti
+  {{/if}}
+{{/games}} neshto takova
+
+
+## za google api -
+<style>
+  #gmaps-border {
+    padding: 5px;
+    border: 1px solid #e5e2c6;
+    width: 246px;
+    height: 171px;
+    background: #fff;
+    -webkit-box-shadow: 1px 1px 1px #fff;
+    -moz-box-shadow: 1px 1px 1px #fff;
+    box-shadow: 1px 1px 1px #fff;
+    margin-bottom: 12px;
+  }
+
+  #gmaps-container-1 {
+    width: 244px;
+    height: 171px;
+  }
+</style>

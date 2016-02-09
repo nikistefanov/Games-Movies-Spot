@@ -1,0 +1,110 @@
+<div class="breadcrumb-and-search row">
+  <ol class="breadcrumb col-sm-4">
+    <li><a href="#/home">Home</a></li>
+    <li class="active">Games</li>
+  </ol>
+  <div class="col-sm-8 search">
+   <div class="input-group">
+     <input type="text" class="form-control" placeholder="Search this website...">
+     <span class="input-group-btn">
+       <button class="btn btn-default" type="button">Search</button>
+     </span>
+   </div>
+ </div>
+</div>
+<hr>
+{{#if this}}
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed add-product-platform" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Add game:
+        </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="input-group">
+          <span class="input-group-addon">Title</span>
+          <input type="text" class="form-control" aria-describedby="basic-addon1" id="tb-game-title">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Platform</span>
+          <select class="form-control" id="tb-game-platform">
+            <option>Choose platform</option>
+            <option>Playstation 4</option>
+            <option>Playstation 3</option>
+            <option>Playstation 2</option>
+            <option>PS Vita</option>
+            <option>XBOX ONE</option>
+            <option>XBOX 360</option>
+            <option>PC</option>
+            <option>Wii U</option>
+            <option>Wii</option>
+            <option>Nintendo 3DS</option>
+            <option>Nintendo DS</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Price</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="tb-game-price">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Image URL</span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Description</span>
+          <input type="text" class="form-control" id="tb-game-description" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group genres">
+          <span class="input-group-addon">Genres</span>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="action" />Action
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="adventure" />Adventure
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="role-playing" />Role-playing
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="simulation" />Simulation
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="strategy" />Strategy
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="vintage" />Vintage
+          </label>
+        </div>
+        <button class="btn btn-default" type="button" id="btn-add-game">Add+</button>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+<div class="gallery row">
+  {{#games}}
+    <div class="gallery-inner-element col-md-4">
+      <div class="thumbnail">
+        <div class="row">
+          <a href="#/games/game-info/{{id}}" class="col-md-6">
+            <img src="{{img}}" class="item-image" alt="{{title}}">
+            <span class="price-tag">
+              <span>
+                <cufontext>{{price}}€</cufontext>
+              </span>
+            </span>
+          </a>
+          <div class="game-info-aside">
+            <h5>{{title}}</h5>
+            <p>
+              <span class="platform">For: {{platform}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/games}}
+</div

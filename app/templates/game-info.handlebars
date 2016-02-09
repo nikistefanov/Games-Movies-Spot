@@ -1,0 +1,70 @@
+{{#game}}
+  <div class="breadcrumb-and-search row">
+    <ol class="breadcrumb">
+      <li><a href="#/home">Home</a></li>
+      <li><a href="#/games">Games</a></li>
+      <li class="active">{{title}}</li>
+    </ol>
+  </div>
+  <hr>
+  <div class="row product-info">
+    <div class="left-section col-lg-8 row">
+      <div class="thumbnail">
+        <div class="row">
+          <img class="" src="{{img}}" alt="game-poster">
+          <div class="product-description" data-game-id="{{id}}">
+            <h5>{{title}}</h5>
+            <p>
+              <span>Price: <b>{{price}} €</b></span>
+              {{#if isOwner}}
+                <p>
+                  <button id="btn-delete-game" class="btn btn-danger" name="button">Delete</button>
+                </p>
+              {{else}}
+                <p><a href="#/games/{{id}}" id="btn-buy-game" class="btn btn-primary" name="button">Buy</a></p>
+              {{/if}}
+            </p>
+            <ul>Genres:
+              {{#each genres}}
+                <li><i class="glyphicon glyphicon-chevron-right"></i> {{this}}</li>
+              {{/each}}
+            </ul>
+            <p>
+              <span>For:
+                <strong>{{platform}}</strong>
+              </span>
+            </p>
+            <p class="description">{{description}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="user-comment-section">
+        <p class="comments-title">
+          Leave a comment
+        </p>
+        <div class="">
+          <img src="images/books.jpg" class="item-image" alt="book">
+          <div class="input">
+            <textarea id="txtarea" rows="3" name="Text" Id="Text" value=""></textarea>
+            <button id="btn-txtarea" class="btn btn-default" type="button">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-section col-lg-4">
+      <p class="comments-title">
+        Recent comments
+      </p>
+      <div class="comments">
+        <p>
+          If you haven't already played {{title}}, now is your chance to experience the adventure on {{platform}} with a shiny experience!
+        </p>
+      </div>
+      <div id="user-comment" class="comments">
+        <p>
+          Your comment goes here.
+        </p>
+      </div>
+    </div>
+  </div>
+{{/game}}

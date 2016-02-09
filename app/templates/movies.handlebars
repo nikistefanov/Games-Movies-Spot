@@ -1,0 +1,97 @@
+<div class="breadcrumb-and-search row">
+  <ol class="breadcrumb col-sm-4">
+    <li><a href="#/home">Home</a></li>
+    <li class="active">Movies</li>
+  </ol>
+  <div class="col-sm-8 search">
+   <div class="input-group">
+     <input type="text" class="form-control" placeholder="Search this website...">
+     <span class="input-group-btn">
+       <button class="btn btn-default" type="button">Search</button>
+     </span>
+   </div>
+ </div>
+</div>
+<hr>
+{{#if this}}
+  <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="headingTwo">
+        <h4 class="panel-title">
+          <a class="collapsed add-product-platform" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Add movie:
+        </a>
+        </h4>
+      </div>
+      <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+        <div class="input-group">
+          <span class="input-group-addon">Title</span>
+          <input type="text" class="form-control" aria-describedby="basic-addon1" id="tb-movie-title">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Year</span>
+          <input type="text" class="form-control" id="tb-movie-year" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Price</span>
+          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id="tb-movie-price">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Image URL</span>
+          <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Description</span>
+          <input type="text" class="form-control" id="tb-movie-description" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group genres">
+          <span class="input-group-addon">Genres</span>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="action" />Action
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="adventure" />Adventure
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="role-playing" />Animation
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="simulation" />Comedy
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="strategy" />Fantasy
+          </label>
+          <label class="checkbox-inline">
+            <input type="checkbox" class="genres-checkbox" value="vintage" />Horror
+          </label>
+        </div>
+        <button class="btn btn-default" type="button" id="btn-add-movie">Add+</button>
+      </div>
+    </div>
+  </div>
+{{/if}}
+
+<div class="gallery row">
+  {{#movies}}
+    <div class="gallery-inner-element col-md-4">
+      <div class="thumbnail">
+        <div class="row">
+          <a href="#/movies/movie-info/{{id}}" class="col-md-6">
+            <img src="{{img}}" class="item-image" alt="{{title}}">
+            <span class="price-tag">
+              <span>
+                <cufontext>{{price}}€</cufontext>
+              </span>
+            </span>
+          </a>
+          <div class="game-info-aside">
+            <h5>{{title}}</h5>
+            <p>
+              <span class="platform">From: {{year}}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/movies}}
+</div
