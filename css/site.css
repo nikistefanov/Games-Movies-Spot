@@ -7,12 +7,12 @@ body, .my-nav {
   padding-top: 0.5em;
   padding-bottom: 0.5em; }
 
-#footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .gallery, .breadcrumb-and-search {
+#maker, .footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .location-section, .gallery, .breadcrumb-and-search {
   padding-right: 16%;
   padding-left: 16%; }
 
 body {
-  font-size: 14px;
+  font-size: 1.1em;
   font-family: "Myriad Pro", sans-serif; }
 
 .clearfix::after {
@@ -41,22 +41,57 @@ hr {
   width: 244px;
   height: 171px; }
 
-#footer {
+#maker {
   margin-top: 0.5em;
   color: #442917; }
-  #footer .copy {
+  #maker .copy {
     margin: 0;
     text-align: center;
     font-style: italic; }
 
+.footer-home {
+  display: none; }
+
 .footer {
   text-align: center;
-  background: #fbfbf8 !important; }
+  background: #fbfbf8 !important;
+  margin-bottom: 20px;
+  padding-top: 10px; }
+  .footer #footer-logo {
+    padding-left: 5px;
+    color: #442917; }
+    .footer #footer-logo img {
+      height: 20px; }
+    .footer #footer-logo span {
+      font-size: 1.4em; }
+    .footer #footer-logo p {
+      font-style: italic;
+      color: #92907c;
+      text-transform: capitalize;
+      margin-top: 10px;
+      padding-left: 0; }
+  .footer .comments {
+    width: 100%;
+    position: relative;
+    float: left;
+    text-align: left; }
+    .footer .comments p {
+      padding-left: 5px;
+      overflow: auto;
+      color: #442917; }
+      .footer .comments p::first-letter {
+        text-transform: capitalize; }
+  .footer .comments-title {
+    text-align: left;
+    font-size: 1.05em;
+    padding-left: 2px;
+    color: #92907c !important;
+    text-transform: uppercase; }
   .footer .btn-games {
     color: white;
     width: 250px;
     position: relative;
-    top: -20px;
+    top: -30px;
     border-radius: 20px;
     background: url(../images/btn-down.png) no-repeat center !important; }
   .footer .footer-nav {
@@ -158,6 +193,12 @@ hr {
       top: 0.75em; }
   #nav .container-fluid {
     padding-left: 20px; }
+
+#btn-login, #btn-reg, #btn-buy-game, #btn-delete-game, #btn-buy-movie, #btn-delete-movie {
+  border-radius: 20px; }
+
+#btn-login, #btn-reg {
+  margin: 0 0 10px 20px; }
 
 #site-slogan {
   color: white;
@@ -285,7 +326,7 @@ hr {
 .product-info .user-comment-section button {
   display: block;
   position: relative;
-  bottom: 3px;
+  bottom: 30px;
   height: 30px;
   left: 250px;
   color: white;
@@ -304,6 +345,7 @@ hr {
   padding-top: 10px;
   padding-bottom: 10px; }
   .promo-gallery .inner-elemets {
+    overflow: hidden;
     padding: 0 2px;
     margin-bottom: 10px;
     height: 280px;
@@ -317,7 +359,7 @@ hr {
         background-repeat: no-repeat;
         height: 100vh; }
         .promo-gallery .inner-elemets .comments-section .thumbnail .books p {
-          width: 250px;
+          width: 180px;
           overflow: auto; }
     .promo-gallery .inner-elemets .comments-section img {
       margin-left: 0;
@@ -334,7 +376,7 @@ hr {
     .promo-gallery .inner-elemets .location-text {
       margin-top: 10px;
       font-family: "Georgia";
-      font-size: 12px;
+      font-size: 1em;
       color: #92907c;
       position: relative;
       float: left; }
@@ -362,6 +404,32 @@ hr {
     margin-top: 15px;
     margin-bottom: 15px; }
 
+.location-section {
+  padding-top: 10px;
+  padding-bottom: 10px; }
+  .location-section .left-section {
+    padding: 0; }
+    .location-section .left-section .title {
+      font-family: "Georgia";
+      font-size: 1em;
+      color: #92907c;
+      text-transform: uppercase; }
+    .location-section .left-section .description {
+      font-size: 1em;
+      color: #442917;
+      text-transform: uppercase; }
+    .location-section .left-section time,
+    .location-section .left-section span {
+      color: #92907c; }
+  .location-section .right-section {
+    padding: 0; }
+    .location-section .right-section iframe {
+      border: 5px solid white;
+      position: relative;
+      float: left;
+      width: 100%;
+      height: 300px; }
+
 .row {
   margin-left: 0;
   margin-right: 0; }
@@ -385,7 +453,8 @@ hr {
     text-align: center;
     border-radius: 10px; }
 
-#btn-add-game, #btn-add-movie {
+#btn-add-game,
+#btn-add-movie {
   background-color: #6BBE92;
   border: 0;
   padding: 10px 0;
@@ -402,6 +471,7 @@ hr {
   border-bottom: 1px solid #ccc; }
 
 .gallery-inner-element {
+  margin-bottom: 16px;
   height: 70px;
   padding: 0; }
   .gallery-inner-element .thumbnail {
@@ -425,7 +495,7 @@ hr {
       width: 90%; }
       .gallery-inner-element .thumbnail .game-info-aside h5 {
         margin: 0;
-        font-size: 12px;
+        font-size: 1em;
         color: #442917; }
     .gallery-inner-element .thumbnail .price-tag {
       display: block;
@@ -434,7 +504,7 @@ hr {
       position: absolute;
       top: 12px;
       left: -8px;
-      font-size: 10px; }
+      font-size: 0.8em; }
       .gallery-inner-element .thumbnail .price-tag span {
         display: block;
         margin-left: -6px;
@@ -446,7 +516,7 @@ hr {
 
 .platform {
   font-family: "Georgia";
-  font-size: 12px;
+  font-size: 1em;
   color: #92907c;
   font-style: italic; }
 
@@ -526,6 +596,9 @@ hr {
       text-transform: uppercase;
       color: #442917; }
 
+@media (min-width: 1024px) {
+  .user-comment-section {
+    margin-bottom: 30px; } }
 @media (min-width: 768px) {
   #main .product-info .left-section .user-comment-section #txtarea {
     margin-left: 10px;
@@ -535,9 +608,9 @@ hr {
     height: 200px; }
   #main .product-info .left-section .user-comment-section button {
     position: relative;
-    bottom: 3px;
+    bottom: 50px;
     height: 30px;
-    left: 350px;
+    left: 330px;
     color: white;
     border-radius: 20px !important;
     background: url(../images/search-btn.png) no-repeat center !important; }
@@ -547,6 +620,9 @@ hr {
     background-size: 420px 217px;
     background-repeat: no-repeat;
     height: 100%; }
+
+  .footer .comments {
+    width: 33%; }
 
   .breadcrumb-and-search input {
     width: 65% !important; }
@@ -558,23 +634,24 @@ hr {
     display: block !important; } }
 @media (min-width: 480px) and (max-width: 767px) {
   #main .product-info .left-section .user-comment-section button {
-    left: 200px; }
+    bottom: 50px;
+    left: 180px; }
 
-  #footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .gallery, .breadcrumb-and-search {
+  #maker, .footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .location-section, .gallery, .breadcrumb-and-search {
     padding-right: 8%;
     padding-left: 8%; }
 
   .navbar-collapse {
     position: relative;
     top: 50px;
-    height: 250px; }
+    height: 230px; }
 
   body {
-    font-size: 10px; }
+    font-size: 1em; }
 
   .product-info,
   .breadcrumb {
-    font-size: 12px; }
+    font-size: 1.1em; }
 
   #nav {
     margin-left: 8%; }
@@ -584,19 +661,20 @@ hr {
   #carousel {
     height: 350px; }
     #carousel .btn {
-      font-size: 12px;
+      font-size: 1.1em;
       width: 175px; } }
 @media (min-width: 390px) and (max-width: 479px) {
   #main .product-info .left-section .user-comment-section #txtarea {
-    width: 250px;
+    width: 260px;
     height: 140px; }
   #main .product-info .left-section .user-comment-section button {
-    left: 200px; }
+    bottom: 50px;
+    left: 190px; }
   #main .product-info .left-section .user-comment-section .input {
     height: 100%;
     background-size: 270px 150px; }
 
-  #footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .gallery, .breadcrumb-and-search {
+  #maker, .footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .location-section, .gallery, .breadcrumb-and-search {
     padding-right: 4%;
     padding-left: 4%; }
 
@@ -605,15 +683,12 @@ hr {
     top: 50px;
     height: 225px; }
 
-  body {
-    font-size: 8px; }
-
   .product-info,
   .breadcrumb {
-    font-size: 12px; }
+    font-size: 1.1em; }
 
   .my-nav {
-    font-size: 10px; }
+    font-size: 1.1em; }
 
   #nav {
     margin-left: 4%; }
@@ -631,14 +706,15 @@ hr {
   #carousel {
     height: 280px; }
     #carousel .btn {
-      font-size: 10px;
+      font-size: 0.9em;
       width: 100px; } }
 @media (min-width: 320px) and (max-width: 389px) {
   #main .product-info .left-section .user-comment-section #txtarea {
-    width: 180px;
+    width: 190px;
     height: 140px; }
   #main .product-info .left-section .user-comment-section button {
-    left: 130px; }
+    bottom: 50px;
+    left: 120px; }
   #main .product-info .left-section .user-comment-section .input {
     height: 100%;
     background-size: 200px 150px; }
@@ -648,16 +724,16 @@ hr {
     #main .product-info .right-section .comments p {
       width: 240px; }
 
-  #footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .gallery, .breadcrumb-and-search {
+  #maker, .footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .location-section, .gallery, .breadcrumb-and-search {
     padding-right: 4%;
     padding-left: 4%; }
 
   body {
-    font-size: 8px; }
+    font-size: 0.8em; }
 
   .product-info,
   .breadcrumb {
-    font-size: 12px; }
+    font-size: 1.1em; }
 
   #logo {
     width: 120px; }
@@ -671,7 +747,7 @@ hr {
       padding-bottom: 2.5px; }
 
   .my-nav {
-    font-size: 10px; }
+    font-size: 1em; }
 
   #nav {
     margin-left: 4%; }
@@ -693,19 +769,19 @@ hr {
     #carousel p {
       display: none; }
     #carousel .btn {
-      font-size: 10px;
+      font-size: 1em;
       width: 80px; } }
 @media (max-width: 319px) {
-  #footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .gallery, .breadcrumb-and-search {
+  #maker, .footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .location-section, .gallery, .breadcrumb-and-search {
     padding-right: 4%;
     padding-left: 4%; }
 
   body {
-    font-size: 8px; }
+    font-size: 0.8em; }
 
   .product-info,
   .breadcrumb {
-    font-size: 10px; }
+    font-size: 1em; }
 
   #logo {
     display: none; }
@@ -719,7 +795,7 @@ hr {
       padding-bottom: 2.5px; }
 
   .my-nav {
-    font-size: 10px; }
+    font-size: 1em; }
 
   #nav {
     margin-left: 4%; }
@@ -747,7 +823,7 @@ hr {
     #carousel p {
       display: none; }
     #carousel .btn {
-      font-size: 10px;
+      font-size: 1em;
       width: 80px; } }
 .loader-top {
   height: 100vh;

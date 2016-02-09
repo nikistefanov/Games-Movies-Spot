@@ -13,7 +13,7 @@ var templates = function() {
         }
       });
     });
-  };
+  }
   return {
     load: load
   };

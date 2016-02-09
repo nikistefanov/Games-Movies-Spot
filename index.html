@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,24 +10,19 @@
   <link rel="stylesheet" href="bower_components/five-star-rating/css/rating.min.css">
   <link rel="stylesheet" href="bower_components/toastr/toastr.css">
   <script src="https://www.parsecdn.com/js/parse-1.6.12.min.js"></script>
-  </script>
-  <style>
-
-  </style>
 </head>
-
 <body>
   <div id="wrapper" class="container">
     <div id="carousel" class="row">
       <header id="header" class="row">
-        <div class="col-md-4 user-nav pull-right">
+        <div class="user-nav col-md-4 pull-right">
 
         </div>
       </header>
       <nav id="nav" class="navbar navbar-default row">
         <div class="container-fluid col-md-12">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button id="burger" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -43,7 +37,7 @@
               <li><a href="#/home">Home</a></li>
               <li><a href="#/games">Games</a></li>
               <li><a href="#/movies">Movies</a></li>
-              <li><a href="#/books">Location</a></li>
+              <li><a href="#/location">Location</a></li>
             </ul>
           </div>
         </div>
@@ -74,9 +68,26 @@
 
       </div>
     </div>
-    <footer id="footer" class="row">
+    <hr>
+    <div id="footer">
+
+    </div>
+    <div class="footer">
+      <a class="btn btn-games" href="#/games">Click here to browse the games</a>
+      <p>
+        <img src="images/footer-logo.png" alt="footer-logo" />
+      </p>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="#/location">About us</a></li>
+          <li><a href="#/location">Contacts</a></li>
+          <li><a href="#/location">Location</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="maker" class="row">
       <p class="copy">&copy; GM-Spot by Nikolay Stefanov</p>
-    </footer>
+    </div>
   </div>
 
   <!-- Libs -->
@@ -104,21 +115,6 @@
   <script src="app/scripts/templates.js"></script>
   <script src="app/scripts/validate.js"></script>
   <script src="app/templates/templatesFunctionality.js"></script>
-
-  <!-- <script type="text/babel">
-    System.config({
-      baseURL: 'app',
-      transpiler: 'babel',
-      map: {
-        babel: '/node_modules/babel-core/browser.js',
-        sammy: '/bower_components/sammy/lib/sammy.js',
-        jquery: '/bower_components/jquery/dist/jquery.js',
-        bootstrapUI: '/bower_components/bootstrap/dist/js/bootstrap.js',
-        handlebars: '/bower_components/handlebars/handlebars.js'
-      }
-    });
-    System.import('app.js');
-  </script> -->
 </body>
 
 </html>

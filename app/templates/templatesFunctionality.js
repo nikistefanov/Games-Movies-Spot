@@ -11,6 +11,7 @@ var templatesFunctionality = function() {
     $('#carousel').removeClass('movies');
     $('#carousel').removeClass('movies-info');
     $('#carousel').removeClass('games');
+    $('#carousel').removeClass('location');
     $('#carousel').removeClass('games-info');
   }
   function loadGameTemplate() {
@@ -32,6 +33,7 @@ var templatesFunctionality = function() {
     $('#carousel').addClass("games");
     $('#carousel').removeClass('movies');
     $('#carousel').removeClass('movies-info');
+    $('#carousel').removeClass('location');
     $('#carousel').removeClass('games-info');
   }
   function loadGameInfoTemplate() {
@@ -45,6 +47,7 @@ var templatesFunctionality = function() {
     $('#carousel').removeClass("games", "movies", "movies-info");
     $('#carousel').removeClass('movies');
     $('#carousel').removeClass('movies-info');
+    $('#carousel').removeClass('location');
     $('#carousel').removeClass('games');
   }
   function loadMovieTemplate() {
@@ -59,6 +62,7 @@ var templatesFunctionality = function() {
     $('#carousel').addClass("movies");
     $('#carousel').removeClass('movies-info');
     $('#carousel').removeClass('games');
+    $('#carousel').removeClass('location');
     $('#carousel').removeClass('games-info');
   }
   function loadMovieInfoTemplate() {
@@ -72,6 +76,22 @@ var templatesFunctionality = function() {
     $('#carousel').removeClass('movies');
     $('#carousel').removeClass('games');
     $('#carousel').removeClass('games-info');
+    $('#carousel').removeClass('location');
+  }
+  function loadLocationTemplate() {
+    $('#active').removeAttr("id");
+    var filename = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
+    $(".navbar-nav a[href*=" + filename + "]").attr("id", "active");
+
+    $('#site-slogan-title').text('Location section');
+    $('#site-slogan-text').text('Oh now you can find us. Bravo!');
+    $('#site-slogan-btn').css("display", "none");
+
+    $('#carousel').addClass("location");
+    $('#carousel').removeClass('movies');
+    $('#carousel').removeClass('movies-info');
+    $('#carousel').removeClass('games');
+    $('#carousel').removeClass('games-info');
   }
 
   return {
@@ -79,6 +99,7 @@ var templatesFunctionality = function() {
     loadGameTemplate: loadGameTemplate,
     loadGameInfoTemplate: loadGameInfoTemplate,
     loadMovieTemplate: loadMovieTemplate,
-    loadMovieInfoTemplate: loadMovieInfoTemplate
+    loadMovieInfoTemplate: loadMovieInfoTemplate,
+    loadLocationTemplate: loadLocationTemplate
   };
 }();

@@ -25,7 +25,7 @@ var eventLoader = function() {
           document.location = document.location.origin;
         });
     });
-  };
+  }
 
   function navigationEvents($container) {
     $container.on('click', '#btn-logout', function(ev) {
@@ -39,24 +39,26 @@ var eventLoader = function() {
       ev.stopPropagation();
       ev.preventDefault();
 
-      var value = $('#search')[0].value;
-      document.location = document.location.origin + '#/search/' + value;
+      var value = $('#search').val();
+      //document.location = document.location.origin + '#/search/' + value;
+      document.location = document.location.origin;
     });
-    $(document).on('click.bs.collapse.data-api', '[data-toggle="collapse"]', function(e) {
+    $(document).on('click', '#burger', function(ev) {
       var $this = $(this);
 
       if (!($this.hasClass("add-product-platform"))) {
         $("#site-slogan").toggle();
       }
     });
-    $(document).on('click', '#btn-txtarea', function(ev) {
+    $container.on('click', '#btn-txtarea', function(ev) {
       ev.stopPropagation();
       ev.preventDefault();
 
       var value = $('#txtarea').val();
       $('#user-comment p').text(value);
+      $('#txtarea').val("");
     });
-  };
+  }
   function gameEvents($container) {
     $container.on('click', '#btn-add-game', function(ev) {
       var genres = [];
@@ -100,7 +102,7 @@ var eventLoader = function() {
           toastr.error(err);
         });
     });
-  };
+  }
   function movieEvents($container) {
     $container.on('click', '#btn-add-movie', function(ev) {
       var genres = [];
@@ -144,7 +146,7 @@ var eventLoader = function() {
           toastr.error(err);
         });
     });
-  };
+  }
   return {
     loginPageEvents: loginPageEvents,
     navigationEvents: navigationEvents,

@@ -42,7 +42,7 @@
     <p class="inner-elemets-title">
       Site’s Recommendations
     </p>
-    {{#with games.[2]}}
+    {{#games}}
       <div class="gallery-inner-element">
         <div class="thumbnail">
           <div class="row">
@@ -58,41 +58,7 @@
           </div>
         </div>
       </div>
-    {{/with}}
-    {{#with games.[1]}}
-      <div class="gallery-inner-element middle">
-        <div class="thumbnail">
-          <div class="row">
-            <a href="#/games/game-info/{{id}}" class="col-md-6">
-              <img src="{{img}}" class="item-image" alt="{{title}}">
-            </a>
-            <div class="game-info-aside">
-              <h5>{{title}}</h5>
-              <p>
-                <span class="platform">For: {{platform}}</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/with}}
-    {{#with games.[0]}}
-      <div class="gallery-inner-element">
-        <div class="thumbnail">
-          <div class="row">
-            <a href="#/movies/movie-info/{{id}}" class="col-md-6">
-              <img src="{{img}}" class="item-image" alt="{{title}}">
-            </a>
-            <div class="game-info-aside">
-              <h5>{{title}}</h5>
-              <p>
-                <span class="platform">For: {{platform}}</span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    {{/with}}
+    {{/games}}
   </section>
   <section class="col-md-4 inner-elemets">
     <p class="inner-elemets-title">
@@ -135,16 +101,3 @@
 </section>
 </div>
 <hr />
-<div class="footer">
-  <a class="btn btn-games" href="#/games">Click here to browse the games</a>
-  <p>
-    <img src="images/footer-logo.png" alt="footer-logo" />
-  </p>
-  <div class="footer-nav">
-    <ul>
-      <li><a href="#/about-us">About us</a></li>
-      <li><a href="#/contacts">Contacts</a></li>
-      <li><a href="#/location">Location</a></li>
-    </ul>
-  </div>
-</div>

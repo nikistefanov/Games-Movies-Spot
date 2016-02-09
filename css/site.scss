@@ -28,12 +28,11 @@ hr {
   box-shadow: 1px 1px 1px #fff;
   margin-bottom: 12px;
 }
-
 #gmaps-container-1 {
   width: 244px;
   height: 171px;
 }
-#footer {
+#maker {
   @extend %padding-right-and-left;
   margin-top: 0.5em;
   color: $thumbnail-title-color;
@@ -43,14 +42,58 @@ hr {
     font-style: italic;
   }
 }
+.footer-home {
+  display: none;
+}
 .footer {
+  @extend %padding-right-and-left;
   text-align: center;
   background: $footer-background-color !important;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  #footer-logo {
+    padding-left: 5px;
+    color: $thumbnail-title-color;
+    img {
+      height: 20px;
+    }
+    span {
+      font-size: 1.4em;
+    }
+    p {
+      font-style: italic;
+      color: $platform-text-color;
+      text-transform: capitalize;
+      margin-top: 10px;
+      padding-left: 0;
+    }
+  }
+  .comments {
+    width: 100%;
+    position: relative;
+    float: left;
+    text-align: left;
+    p {
+      padding-left: 5px;
+      overflow: auto;
+      color: $thumbnail-title-color;
+      &::first-letter {
+        text-transform: capitalize;
+      }
+    }
+  }
+  .comments-title {
+    text-align: left;
+    font-size: 1.05em;
+    padding-left: 2px;
+    color: $platform-text-color !important;
+    text-transform: uppercase;
+  }
   .btn-games {
     color: white;
     width: 250px;
     position: relative;
-    top: -20px;
+    top: -30px;
     border-radius: 20px;
     background: url(../images/btn-down.png) no-repeat center !important;
   }
@@ -188,6 +231,12 @@ hr {
     @extend %padding-right-and-left;
     padding-left: 20px;
   }
+}
+#btn-login, #btn-reg, #btn-buy-game, #btn-delete-game, #btn-buy-movie, #btn-delete-movie {
+  border-radius: 20px;
+}
+#btn-login, #btn-reg {
+  margin: 0 0 10px 20px;
 }
 #site-slogan {
   color: white;
@@ -347,7 +396,7 @@ hr {
     button {
       display: block;
       position: relative;
-      bottom: 3px;
+      bottom: 30px;
       height: 30px;
       left: 250px;
       color: white;
@@ -370,6 +419,7 @@ hr {
   padding-top: 10px;
   padding-bottom: 10px;
   .inner-elemets {
+    overflow: hidden;
     padding: 0 2px;
     margin-bottom: 10px;
     height: 280px;
@@ -384,7 +434,7 @@ hr {
           background-repeat: no-repeat;
           height: 100vh;
           p {
-            width: 250px;
+            width: 180px;
             overflow: auto;
           }
         }
@@ -444,6 +494,39 @@ hr {
     margin-bottom: 15px;
   }
 }
+.location-section {
+  @extend %padding-right-and-left;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  .left-section {
+    padding: 0;
+    .title {
+      font-family: $gallery-font-family;
+      font-size: $gallery-font-size;
+      color: $platform-text-color;
+      text-transform: uppercase;
+    }
+    .description {
+      font-size: $gallery-font-size;
+      color: $thumbnail-title-color;
+      text-transform: uppercase;
+    }
+    time,
+    span {
+      color: $platform-text-color;
+    }
+  }
+  .right-section {
+    padding: 0;
+    iframe {
+      border: 5px solid white;
+      position: relative;
+      float: left;
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
 .row {
   margin-left: 0;
   margin-right: 0;
@@ -472,7 +555,8 @@ hr {
     border-radius: 10px;
   }
 }
-#btn-add-game, #btn-add-movie {
+#btn-add-game,
+#btn-add-movie {
   background-color: #6BBE92;
   border: 0;
   padding: 10px 0;
@@ -494,6 +578,7 @@ hr {
   @extend %padding-right-and-left;
 }
 .gallery-inner-element {
+  margin-bottom: 16px;
   height: 70px;
   padding: 0;
   .thumbnail {
@@ -519,7 +604,7 @@ hr {
       width: 90%;
       h5 {
         margin: 0;
-        font-size: 12px;
+        font-size: 1em;
         color: $thumbnail-title-color;
       }
     }
@@ -530,7 +615,7 @@ hr {
       position: absolute;
       top: 12px;
       left: -8px;
-      font-size: 10px;
+      font-size: 0.8em;
       span {
         display: block;
         margin-left: -6px;
@@ -636,6 +721,11 @@ hr {
     }
   }
 }
+@media (min-width: 1024px) {
+  .user-comment-section {
+    margin-bottom: 30px;
+  }
+}
 @media (min-width: 768px) {
   #main {
     .product-info {
@@ -650,9 +740,9 @@ hr {
           }
           button {
             position: relative;
-            bottom: 3px;
+            bottom: 50px;
             height: 30px;
-            left: 350px;
+            left: 330px;
             color: white;
             border-radius: 20px !important;
             background: url(../images/search-btn.png) no-repeat center !important;
@@ -666,6 +756,11 @@ hr {
           }
         }
       }
+    }
+  }
+  .footer {
+    .comments {
+      width: 33%;
     }
   }
   .breadcrumb-and-search {
@@ -686,7 +781,8 @@ hr {
       .left-section {
         .user-comment-section {
           button {
-            left: 200px;
+            bottom: 50px;
+            left: 180px;
           }
         }
       }
@@ -699,14 +795,14 @@ hr {
   .navbar-collapse {
     position: relative;
     top: 50px;
-    height: 250px;
+    height: 230px;
   }
   body {
-    font-size: 10px;
+    font-size: 1em;
   }
   .product-info,
   .breadcrumb {
-    font-size: 12px;
+    font-size: 1.1em;
   }
   #nav {
     margin-left: 8%;
@@ -717,7 +813,7 @@ hr {
   #carousel {
     height: 350px;
     .btn {
-      font-size: 12px;
+      font-size: 1.1em;
       width: 175px;
     }
   }
@@ -728,11 +824,12 @@ hr {
       .left-section {
         .user-comment-section {
           #txtarea {
-            width: 250px;
+            width: 260px;
             height: 140px;
           }
           button {
-            left: 200px;
+            bottom: 50px;
+            left: 190px;
           }
           .input {
             height: 100%;
@@ -751,15 +848,12 @@ hr {
     top: 50px;
     height: 225px;
   }
-  body {
-    font-size: 8px;
-  }
   .product-info,
   .breadcrumb {
-    font-size: 12px;
+    font-size: 1.1em;
   }
   .my-nav {
-    font-size: 10px;
+    font-size: 1.1em;
   }
   #nav {
     margin-left: 4%;
@@ -781,7 +875,7 @@ hr {
   #carousel {
     height: 280px;
     .btn {
-      font-size: 10px;
+      font-size: 0.9em;
       width: 100px;
     }
   }
@@ -792,11 +886,12 @@ hr {
       .left-section {
         .user-comment-section {
           #txtarea {
-            width: 180px;
+            width: 190px;
             height: 140px;
           }
           button {
-            left: 130px;
+            bottom: 50px;
+            left: 120px;
           }
           .input {
             height: 100%;
@@ -820,11 +915,11 @@ hr {
     padding-left: 4%;
   }
   body {
-    font-size: 8px;
+    font-size: 0.8em;
   }
   .product-info,
   .breadcrumb {
-    font-size: 12px;
+    font-size: 1.1em;
   }
   #logo {
     width: 120px;
@@ -841,7 +936,7 @@ hr {
     }
   }
   .my-nav {
-    font-size: 10px;
+    font-size: 1em;
   }
   #nav {
     margin-left: 4%;
@@ -869,7 +964,7 @@ hr {
       display: none;
     }
     .btn {
-      font-size: 10px;
+      font-size: 1em;
       width: 80px;
     }
   }
@@ -880,11 +975,11 @@ hr {
     padding-left: 4%;
   }
   body {
-    font-size: 8px;
+    font-size: 0.8em;
   }
   .product-info,
   .breadcrumb {
-    font-size: 10px;
+    font-size: 1em;
   }
   #logo {
     display: none;
@@ -901,7 +996,7 @@ hr {
     }
   }
   .my-nav {
-    font-size: 10px;
+    font-size: 1em;
   }
   #nav {
     margin-left: 4%;
@@ -936,7 +1031,7 @@ hr {
       display: none;
     }
     .btn {
-      font-size: 10px;
+      font-size: 1em;
       width: 80px;
     }
   }

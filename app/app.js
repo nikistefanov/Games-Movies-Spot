@@ -1,7 +1,8 @@
-(function () {
+(function() {
   Parse.initialize("CQQSRsV2TqaFPvfgN0LJuW49vI7usCNSQpxfNasJ", "kp0Hm8vWotsHZIlFLz20Vaa9nmNdDH0B3N3hF9ha");
   var containerId = '#main',
-    $container = $(containerId);
+    $container = $(containerId),
+    $footer = $('#footer');
 
   var sammyApp = Sammy(containerId, function() {
     this.get('#/', function() {
@@ -18,6 +19,10 @@
 
           $container.html(html);
         });
+      templates.load('footer-home')
+        .then(function(templateHtml) {
+          $footer.html(templateHtml);
+        });
     });
 
     this.get('#/games', function() {
@@ -30,6 +35,10 @@
             html = template(results[0]);
 
           $container.html(html);
+        });
+      templates.load('footer')
+        .then(function(templateHtml) {
+          $footer.html(templateHtml);
         });
 
       eventLoader.gameEvents($container);
@@ -61,6 +70,10 @@
 
           $container.html(html);
         });
+      templates.load('footer')
+        .then(function(templateHtml) {
+          $footer.html(templateHtml);
+        });
 
       eventLoader.movieEvents($container);
     });
@@ -81,6 +94,19 @@
       eventLoader.movieEvents($container);
     });
 
+    this.get('#/location', function() {
+      templatesFunctionality.loadLocationTemplate();
+      templates.load('location')
+        .then(function(templateHtml) {
+          $('.loader-top').hide();
+          $container.html(templateHtml);
+        });
+      templates.load('footer')
+        .then(function(templateHtml) {
+          $footer.html(templateHtml);
+        });
+    });
+
     this.get('#/login', function() {
       templates.load('login')
         .then(function(templateHtml) {
@@ -99,18 +125,20 @@
       eventLoader.loginPageEvents($container);
     });
 
+    $(function() {
+      Promise.all([users.current(), templates.load('login-logout')])
+        .then(function(results) {
+          var template = Handlebars.compile(results[1]),
+            html = template(results[0]);
 
-    Promise.all([users.current(), templates.load('login-logout')])
-      .then(function(results) {
-        var template = Handlebars.compile(results[1]),
-          html = template(results[0]);
-
-        $('.user-nav').append(html);
-      });
-    eventLoader.navigationEvents($('.user-nav'));
+          $('.user-nav').append(html);
+        });
+      eventLoader.navigationEvents($('.user-nav'));
+    });
   });
 
-  $(function () {
-          sammyApp.run('#/');
-      });
+  $(function() {
+    sammyApp.run('#/');
+    eventLoader.navigationEvents($container);
+  });
 }());
