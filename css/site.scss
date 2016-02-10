@@ -17,6 +17,9 @@ hr {
   height: 1px;
   background-image: linear-gradient(to right, rgba(33, 33, 33, 0), rgba(33, 33, 33, 0.75), rgba(33, 33, 33, 0));
 }
+#wrapper {
+  width: 100% !important;
+}
 #gmaps-border {
   padding: 5px;
   border: 1px solid #e5e2c6;

@@ -139,6 +139,6 @@
 
   $(function() {
     sammyApp.run('#/');
-    eventLoader.navigationEvents($container);
+    eventLoader.collapseEventes($container);
   });
 }());

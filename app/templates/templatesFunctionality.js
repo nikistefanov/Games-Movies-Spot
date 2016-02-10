@@ -37,6 +37,7 @@ var templatesFunctionality = function() {
     $('#carousel').removeClass('games-info');
   }
   function loadGameInfoTemplate() {
+    $('#active').removeAttr("id");
     $(".navbar-nav a[href*=games]").attr("id", "active");
 
     $('#site-slogan-title').text('This games is awesome');
@@ -66,6 +67,7 @@ var templatesFunctionality = function() {
     $('#carousel').removeClass('games-info');
   }
   function loadMovieInfoTemplate() {
+    $('#active').removeAttr("id");
     $(".navbar-nav a[href*=movies]").attr("id", "active");
 
     $('#site-slogan-title').text('Nice choice!');

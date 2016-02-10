@@ -43,13 +43,7 @@ var eventLoader = function() {
       //document.location = document.location.origin + '#/search/' + value;
       document.location = document.location.origin;
     });
-    $(document).on('click', '#burger', function(ev) {
-      var $this = $(this);
 
-      if (!($this.hasClass("add-product-platform"))) {
-        $("#site-slogan").toggle();
-      }
-    });
     $container.on('click', '#btn-txtarea', function(ev) {
       ev.stopPropagation();
       ev.preventDefault();
@@ -77,9 +71,9 @@ var eventLoader = function() {
         owner: Parse.User.current()
       };
 
-      gameData.forEach((key) => {
-        validate.ifUndefined(gameData[key]);
-      });
+      // gameData.forEach((key) => {
+      //   validate.ifUndefined(gameData[key]);
+      // });
 
       data.games.add(gameData)
         .then(function(data) {
@@ -121,9 +115,9 @@ var eventLoader = function() {
         owner: Parse.User.current()
       };
 
-      movieData.forEach((key) => {
-        validate.ifUndefined(movieData[key]);
-      });
+      // movieData.forEach((key) => {
+      //   validate.ifUndefined(movieData[key]);
+      // });
 
       data.movies.add(movieData)
         .then(function(data) {
@@ -147,10 +141,20 @@ var eventLoader = function() {
         });
     });
   }
+  function collapseEventes($container) {
+    $(document).on('click', '#burger', function(ev) {
+      var $this = $(this);
+
+      if (!($this.hasClass("add-product-platform"))) {
+        $("#site-slogan").toggle();
+      }
+    });
+  }
   return {
     loginPageEvents: loginPageEvents,
     navigationEvents: navigationEvents,
     gameEvents: gameEvents,
-    movieEvents: movieEvents
+    movieEvents: movieEvents,
+    collapseEventes: collapseEventes
   };
 }();
