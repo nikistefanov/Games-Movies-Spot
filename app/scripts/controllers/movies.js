@@ -39,9 +39,9 @@ var movies = function() {
   function add(movieData) {
     var movie = new Movie();
 
-    ['title', 'year', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
-      movie.set(key, movieData[key]);
-    });
+    // ['title', 'year', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
+    //   movie.set(key, movieData[key]);
+    // });
 
     return movie.save();
   }

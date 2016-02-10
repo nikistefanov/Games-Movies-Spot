@@ -11,7 +11,7 @@ var converter = function() {
       genres: dbGame.get('genres'),
       ownerId: owner ? owner.id : null
     };
-  };
+  }
   function dbMovieToMovieVM(dbMovie) {
     var owner = dbMovie.get('owner');
     return {
@@ -24,7 +24,7 @@ var converter = function() {
       genres: dbMovie.get('genres'),
       ownerId: owner ? owner.id : null
     };
-  };
+  }
   return {
     dbGameToGameVM: dbGameToGameVM,
     dbMovieToMovieVM: dbMovieToMovieVM

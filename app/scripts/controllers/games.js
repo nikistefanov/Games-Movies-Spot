@@ -39,33 +39,19 @@ var games = function() {
       });
   }
 
-  function getItemByTitle(string) {
-    var searchedString = string;
-    var query = new Parse.Query(Game);
-    return query.find()
-        .then(function(data) {
-          return data.map(function(item) {
-            return converter.dbGameToGameVM(item);
-          });
-        })
-        .then(function(data) {
-          var currentGames = [];
-          data.map(function(item) {
-            if (item.title.indexOf(searchedString) > -1) {
-              currentGames.push(item);
-            }
-          });
-          debugger;
-          return currentGames;
-        });
-  }
-
   function add(gameData) {
     var game = new Game();
 
-    ['title', 'platform', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
-      game.set(key, gameData[key]);
-    });
+    // ['title', 'platform', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
+    //   game.set(key, gameData[key]);
+    // });
+    game.set('title', gameData[0]);
+    game.set('platform', gameData[1]);
+    game.set('price', gameData[2]);
+    game.set('img', gameData[3]);
+    game.set('description', gameData[4]);
+    game.set('genres', gameData[5]);
+    game.set('owner', gameData[6]);
 
     return game.save();
   }
@@ -83,7 +69,6 @@ var games = function() {
   return {
     all: all,
     get: get,
-    getItemByTitle: getItemByTitle,
     add: add,
     remove: remove
   };

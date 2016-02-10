@@ -6,7 +6,7 @@ var eventLoader = function() {
       var username = $('#input-username')[0].value;
       var password = $('#input-password')[0].value;
 
-      data.users.login(username, password)
+      users.login(username, password)
         .then(function() {
           toastr.success('Logged in!');
           document.location = document.location.origin;
@@ -19,7 +19,7 @@ var eventLoader = function() {
       var username = $('#input-username')[0].value,
         password = $('#input-password')[0].value;
 
-      data.users.register(username, password)
+      users.register(username, password)
         .then(function() {
           toastr.success('Registered!');
           document.location = document.location.origin;
@@ -29,7 +29,7 @@ var eventLoader = function() {
 
   function navigationEvents($container) {
     $container.on('click', '#btn-logout', function(ev) {
-      data.users.logout()
+      users.logout()
         .then(function() {
           toastr.success('Logged out!');
           location.reload();
@@ -43,16 +43,8 @@ var eventLoader = function() {
       //document.location = document.location.origin + '#/search/' + value;
       document.location = document.location.origin;
     });
-
-    $container.on('click', '#btn-txtarea', function(ev) {
-      ev.stopPropagation();
-      ev.preventDefault();
-
-      var value = $('#txtarea').val();
-      $('#user-comment p').text(value);
-      $('#txtarea').val("");
-    });
   }
+
   function gameEvents($container) {
     $container.on('click', '#btn-add-game', function(ev) {
       var genres = [];
@@ -71,11 +63,14 @@ var eventLoader = function() {
         owner: Parse.User.current()
       };
 
-      // gameData.forEach((key) => {
-      //   validate.ifUndefined(gameData[key]);
-      // });
+      $.each(gameData, function(index, value) {
+        validate.ifUndefined(value);
+        if (!(index == 'genres' || index == 'platform' || index == 'price')) {
+          validate.valueMinLength(value, CONSTANTS.PRODUCT_MIN_LENGTH, index);
+        }
+      });
 
-      data.games.add(gameData)
+      games.add(gameData)
         .then(function(data) {
           toastr.success('Game added.');
           location.reload();
@@ -87,7 +82,7 @@ var eventLoader = function() {
       ev.preventDefault();
 
       var gameId = $(ev.target).closest('div').attr('data-game-id');
-      data.games.remove(gameId)
+      games.remove(gameId)
         .then(function(data) {
           toastr.success('Game removed.');
           document.location = document.location.href = '#/games';
@@ -97,6 +92,7 @@ var eventLoader = function() {
         });
     });
   }
+
   function movieEvents($container) {
     $container.on('click', '#btn-add-movie', function(ev) {
       var genres = [];
@@ -115,11 +111,14 @@ var eventLoader = function() {
         owner: Parse.User.current()
       };
 
-      // movieData.forEach((key) => {
-      //   validate.ifUndefined(movieData[key]);
-      // });
+      $.each(movieData, function(index, value) {
+        validate.ifUndefined(value);
+        if (!(index == 'genres' || index == 'price')) {
+          validate.valueMinLength(value, CONSTANTS.PRODUCT_MIN_LENGTH, index);
+        }
+      });
 
-      data.movies.add(movieData)
+      movies.add(movieData)
         .then(function(data) {
           toastr.success('Movie added.');
           location.reload();
@@ -131,7 +130,7 @@ var eventLoader = function() {
       ev.preventDefault();
 
       var movieId = $(ev.target).closest('div').attr('data-movie-id');
-      data.movies.remove(movieId)
+      movies.remove(movieId)
         .then(function(data) {
           toastr.success('Movie removed.');
           document.location = document.location.href = '#/movies';
@@ -141,6 +140,7 @@ var eventLoader = function() {
         });
     });
   }
+
   function collapseEventes($container) {
     $(document).on('click', '#burger', function(ev) {
       var $this = $(this);
@@ -148,6 +148,15 @@ var eventLoader = function() {
       if (!($this.hasClass("add-product-platform"))) {
         $("#site-slogan").toggle();
       }
+    });
+
+    $container.on('click', '#btn-txtarea', function(ev) {
+      ev.stopPropagation();
+      ev.preventDefault();
+
+      var value = $('#txtarea').val();
+      $('#user-comment p').text(value);
+      $('#txtarea').val("");
     });
   }
   return {

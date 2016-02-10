@@ -40,8 +40,6 @@
         .then(function(templateHtml) {
           $footer.html(templateHtml);
         });
-
-      eventLoader.gameEvents($container);
     });
 
     this.get('#/games/game-info/:id', function(context) {
@@ -56,8 +54,6 @@
 
           $container.html(html);
         });
-
-      eventLoader.gameEvents($container);
     });
 
     this.get('#/movies', function() {
@@ -74,8 +70,6 @@
         .then(function(templateHtml) {
           $footer.html(templateHtml);
         });
-
-      eventLoader.movieEvents($container);
     });
 
     this.get('#/movies/movie-info/:id', function(context) {
@@ -90,8 +84,6 @@
 
           $container.html(html);
         });
-
-      eventLoader.movieEvents($container);
     });
 
     this.get('#/location', function() {
@@ -112,8 +104,6 @@
         .then(function(templateHtml) {
           $container.html(templateHtml);
         });
-
-      eventLoader.loginPageEvents($container);
     });
 
     this.get('#/register', function() {
@@ -121,8 +111,6 @@
         .then(function(templateHtml) {
           $container.html(templateHtml);
         });
-
-      eventLoader.loginPageEvents($container);
     });
 
     $(function() {
@@ -133,12 +121,15 @@
 
           $('.user-nav').append(html);
         });
-      eventLoader.navigationEvents($('.user-nav'));
     });
   });
 
   $(function() {
     sammyApp.run('#/');
     eventLoader.collapseEventes($container);
+    eventLoader.navigationEvents($('.user-nav'));
+    eventLoader.loginPageEvents($container);
+    eventLoader.movieEvents($container);
+    eventLoader.gameEvents($container);
   });
 }());
