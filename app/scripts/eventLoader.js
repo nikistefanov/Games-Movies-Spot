@@ -13,7 +13,7 @@ var eventLoader = function() {
       users.login(username, password)
         .then(function() {
           toastr.success('Logged in!');
-          document.location = document.location.origin;
+          document.location = document.referrer;
         });
     });
 
@@ -26,7 +26,8 @@ var eventLoader = function() {
       users.register(username, password)
         .then(function() {
           toastr.success('Registered!');
-          document.location = document.location.origin;
+          // document.location = document.location.origin;
+          document.location = document.referrer;
         });
     });
   }
@@ -42,10 +43,10 @@ var eventLoader = function() {
     $container.on('click', '#btn-search', function(ev) {
       ev.stopPropagation();
       ev.preventDefault();
+      console.log(5);
 
       var value = $('#search').val();
       //document.location = document.location.origin + '#/search/' + value;
-      document.location = document.location.origin;
     });
   }
 
@@ -69,7 +70,7 @@ var eventLoader = function() {
 
       $.each(gameData, function(index, value) {
         validate.ifUndefined(value);
-        if (!(index == 'genres' || index == 'platform' || index == 'price')) {
+        if (!(index == 'genres' || index == 'platform' || index == 'price' || index == 'owner')) {
           validate.valueMinLength(value, CONSTANTS.PRODUCT_MIN_LENGTH, index);
         }
       });
@@ -117,7 +118,7 @@ var eventLoader = function() {
 
       $.each(movieData, function(index, value) {
         validate.ifUndefined(value);
-        if (!(index == 'genres' || index == 'price')) {
+        if (!(index == 'genres' || index == 'price' || index == 'owner')) {
           validate.valueMinLength(value, CONSTANTS.PRODUCT_MIN_LENGTH, index);
         }
       });
@@ -159,6 +160,7 @@ var eventLoader = function() {
       ev.preventDefault();
 
       var value = $('#txtarea').val();
+      validate.isValidString(value);
       $('#user-comment p').text(value);
       $('#txtarea').val("");
     });

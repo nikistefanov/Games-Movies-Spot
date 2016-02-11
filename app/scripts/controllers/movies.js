@@ -42,6 +42,13 @@ var movies = function() {
     // ['title', 'year', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
     //   movie.set(key, movieData[key]);
     // });
+    movie.set('title', movieData.title);
+    movie.set('year', movieData.year);
+    movie.set('price', movieData.price);
+    movie.set('img', movieData.img);
+    movie.set('description', movieData.description);
+    movie.set('genres', movieData.genres);
+    movie.set('owner', movieData.owner);
 
     return movie.save();
   }

@@ -45,13 +45,13 @@ var games = function() {
     // ['title', 'platform', 'price', 'img', 'description', 'genres', 'owner'].forEach((key) => {
     //   game.set(key, gameData[key]);
     // });
-    game.set('title', gameData[0]);
-    game.set('platform', gameData[1]);
-    game.set('price', gameData[2]);
-    game.set('img', gameData[3]);
-    game.set('description', gameData[4]);
-    game.set('genres', gameData[5]);
-    game.set('owner', gameData[6]);
+    game.set('title', gameData.title);
+    game.set('platform', gameData.platform);
+    game.set('price', gameData.price);
+    game.set('img', gameData.img);
+    game.set('description', gameData.description);
+    game.set('genres', gameData.genres);
+    game.set('owner', gameData.owner);
 
     return game.save();
   }

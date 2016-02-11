@@ -1,6 +1,9 @@
 @import 'variables';
 @import 'resets';
 // @import 'media-queries';
+.user-nav {
+  display: none !important;
+}
 body {
   @extend %reset;
   font-size: $font-size-original;
