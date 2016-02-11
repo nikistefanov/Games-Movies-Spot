@@ -1,4 +1,8 @@
 var eventLoader = function() {
+  var CONSTANTS = {
+    PRODUCT_MIN_LENGTH: 3,
+  };
+
   function loginPageEvents($container) {
     $container.on('click', '#btn-login', function(ev) {
       ev.stopPropagation();
