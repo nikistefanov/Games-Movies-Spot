@@ -36,9 +36,12 @@
 
           $container.html(html);
         });
-      templates.load('footer')
-        .then(function(templateHtml) {
-          $footer.html(templateHtml);
+      Promise.all([data.comments.all(), templates.load('footer')])
+        .then(function(results) {
+          var template = Handlebars.compile(results[1]),
+            html = template(results[0]);
+
+          $footer.html(html);
         });
     });
 
@@ -66,9 +69,12 @@
 
           $container.html(html);
         });
-      templates.load('footer')
-        .then(function(templateHtml) {
-          $footer.html(templateHtml);
+      Promise.all([data.comments.all(), templates.load('footer')])
+        .then(function(results) {
+          var template = Handlebars.compile(results[1]),
+            html = template(results[0]);
+
+          $footer.html(html);
         });
     });
 
@@ -93,9 +99,12 @@
           $('.loader-top').hide();
           $container.html(templateHtml);
         });
-      templates.load('footer')
-        .then(function(templateHtml) {
-          $footer.html(templateHtml);
+      Promise.all([data.comments.all(), templates.load('footer')])
+        .then(function(results) {
+          var template = Handlebars.compile(results[1]),
+            html = template(results[0]);
+
+          $footer.html(html);
         });
     });
 
@@ -126,7 +135,8 @@
 
   $(function() {
     sammyApp.run('#/');
-    eventLoader.collapseEventes($container);
+    eventLoader.collapseEvents($container);
+    eventLoader.commentsEvents($container);
     eventLoader.navigationEvents($('.user-nav'));
     eventLoader.loginPageEvents($container);
     eventLoader.movieEvents($container);

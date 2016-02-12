@@ -76,6 +76,7 @@ var data = function() {
         remove: remove
       };
     },
-    movies: movies
+    movies: movies,
+    comments: comments
   };
 }();

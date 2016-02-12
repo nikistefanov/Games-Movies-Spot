@@ -93,6 +93,10 @@ hr {
     padding-left: 2px;
     color: #92907c !important;
     text-transform: uppercase; }
+    .footer .comments-title span {
+      color: #442917;
+      font-size: .8em;
+      text-transform: none; }
   .footer .btn-games {
     color: white;
     width: 250px;

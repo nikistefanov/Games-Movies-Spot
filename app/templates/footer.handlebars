@@ -13,26 +13,28 @@
     </div>
   </div>
   <div class="comments col-lg-4">
+    {{#with comments.[0]}}
     <p class="comments-title">
-      Recent comments
+      Recent comments: <span>{{date}}</span>
     </p>
     <div class="">
       <p>
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,
-        you need to be sure there isn't anything embarrassing hidden in the middle of text.
+        {{text}}
       </p>
     </div>
+    {{/with}}
   </div>
   <div class="comments col-lg-4">
+    {{#with comments.[1]}}
     <p class="comments-title">
-      Recent posts
+      Recent posts: <span>{{date}}</span>
     </p>
     <div class="">
       <p>
-        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum,
-        you need to be sure there isn't anything embarrassing hidden in the middle of text.
+        {{text}}
       </p>
     </div>
+    {{/with}}
   </div>
 </div>
 <hr>

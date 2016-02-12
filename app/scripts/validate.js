@@ -20,7 +20,7 @@ var validate = (function () {
     function isValidString(value, name) {
       name = name || 'Value';
 
-      if (/[~`!#$%\^&*+=\-\[\]\\';,/{}|\\":<>\?]/g.test(value)) {
+      if (/[~`#$%\^&*+=\-\[\]/{}|:<>\?]/g.test(value)) {
         toastr.error(name + ' cannot contains any special symbols.');
         throw new Error();
       }

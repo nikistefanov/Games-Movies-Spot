@@ -25,8 +25,17 @@ var converter = function() {
       ownerId: owner ? owner.id : null
     };
   }
+  function dbCommentToCommentVM(dbComment) {
+    var owner = dbComment.get('owner');
+    return {
+      id: dbComment.id,
+      text: dbComment.get('text'),
+      date: dbComment.get('date')
+    };
+  }
   return {
     dbGameToGameVM: dbGameToGameVM,
-    dbMovieToMovieVM: dbMovieToMovieVM
+    dbMovieToMovieVM: dbMovieToMovieVM,
+    dbCommentToCommentVM: dbCommentToCommentVM
   };
 }();

@@ -146,7 +146,7 @@ var eventLoader = function() {
     });
   }
 
-  function collapseEventes($container) {
+  function collapseEvents($container) {
     $(document).on('click', '#burger', function(ev) {
       var $this = $(this);
 
@@ -154,15 +154,33 @@ var eventLoader = function() {
         $("#site-slogan").toggle();
       }
     });
+  }
 
+  function commentsEvents($container) {
     $container.on('click', '#btn-txtarea', function(ev) {
       ev.stopPropagation();
       ev.preventDefault();
 
+      var date = new Date().toLocaleString();
       var value = $('#txtarea').val();
+
+      validate.ifUndefined(value);
+      validate.valueMinLength(value, CONSTANTS.PRODUCT_MIN_LENGTH);
       validate.isValidString(value);
+
       $('#user-comment p').text(value);
       $('#txtarea').val("");
+
+      var commentData = {
+        text: value,
+        date: date,
+        owner: Parse.User.current()
+      };
+
+      comments.add(commentData)
+        .then(function(data) {
+          notifier.success('Comment added.');
+        });
     });
   }
   return {
@@ -170,6 +188,7 @@ var eventLoader = function() {
     navigationEvents: navigationEvents,
     gameEvents: gameEvents,
     movieEvents: movieEvents,
-    collapseEventes: collapseEventes
+    collapseEvents: collapseEvents,
+    commentsEvents: commentsEvents
   };
 }();

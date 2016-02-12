@@ -94,6 +94,12 @@ hr {
     padding-left: 2px;
     color: $platform-text-color !important;
     text-transform: uppercase;
+
+    span {
+      color: $thumbnail-title-color;
+      font-size: .8em;
+      text-transform: none;
+    }
   }
   .btn-games {
     color: white;
