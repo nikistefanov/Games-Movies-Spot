@@ -97,7 +97,7 @@ hr {
     color: white;
     width: 250px;
     position: relative;
-    top: -30px;
+    top: -29px;
     border-radius: 20px;
     background: url(../images/btn-down.png) no-repeat center !important; }
   .footer .footer-nav {
@@ -146,7 +146,6 @@ hr {
 #nav {
   color: white;
   background: #999281;
-  margin-left: 16%;
   border-radius: 0;
   border: 0;
   margin-bottom: 0; }
@@ -211,12 +210,12 @@ hr {
   margin-top: 10px; }
   #site-slogan h3,
   #site-slogan p {
-    width: 60%; }
+    width: 70%; }
   #site-slogan h3 {
     font-size: 1.7em;
     text-transform: uppercase; }
   #site-slogan p {
-    font-size: 1.2em; }
+    font-size: 1em; }
   #site-slogan .btn-success {
     width: 250px;
     border-radius: 20px;
@@ -227,7 +226,7 @@ hr {
 
 #carousel {
   background: #452917;
-  height: 400px; }
+  height: 350px; }
 
 #myCarousel {
   height: 125px;
@@ -606,6 +605,9 @@ hr {
   .user-comment-section {
     margin-bottom: 30px; } }
 @media (min-width: 768px) {
+  #nav {
+    margin-left: 16%; }
+
   #main .product-info .left-section .user-comment-section #txtarea {
     margin-left: 10px;
     border: 0;
@@ -628,7 +630,7 @@ hr {
     height: 100%; }
 
   .footer .comments {
-    width: 33%; }
+    width: 33% !important; }
 
   .breadcrumb-and-search input {
     width: 65% !important; }
@@ -664,11 +666,11 @@ hr {
     #nav ul {
       float: left !important; }
 
-  #carousel {
-    height: 350px; }
-    #carousel .btn {
-      font-size: 1.1em;
-      width: 175px; } }
+  #carousel h3, #carousel p {
+    width: 80% !important; }
+  #carousel .btn {
+    font-size: 1.1em;
+    width: 175px; } }
 @media (min-width: 390px) and (max-width: 479px) {
   #main .product-info .left-section .user-comment-section #txtarea {
     width: 260px;
@@ -687,7 +689,7 @@ hr {
   .navbar-collapse {
     position: relative;
     top: 50px;
-    height: 225px; }
+    height: 220px; }
 
   .product-info,
   .breadcrumb {
@@ -710,10 +712,15 @@ hr {
     height: 10px; }
 
   #carousel {
-    height: 280px; }
+    height: 250px !important; }
+    #carousel h3 {
+      font-size: 1.3em !important;
+      width: 80% !important; }
+    #carousel p {
+      display: none !important; }
     #carousel .btn {
-      font-size: 0.9em;
-      width: 100px; } }
+      font-size: 0.9em !important;
+      width: 100px !important; } }
 @media (min-width: 320px) and (max-width: 389px) {
   #main .product-info .left-section .user-comment-section #txtarea {
     width: 190px;
@@ -758,7 +765,7 @@ hr {
   #nav {
     margin-left: 4%; }
     #nav .navbar-toggle {
-      right: 0; }
+      right: 0 !important; }
     #nav ul {
       float: left !important; }
 
@@ -769,14 +776,17 @@ hr {
     height: 8px; }
 
   #carousel {
-    height: 250px; }
+    height: 250px !important; }
+    #carousel h3 {
+      font-size: 1.2em !important;
+      width: 100% !important; }
     #carousel img {
       width: 160px; }
     #carousel p {
       display: none; }
     #carousel .btn {
-      font-size: 1em;
-      width: 80px; } }
+      font-size: 1em !important;
+      width: 80px !important; } }
 @media (max-width: 319px) {
   #maker, .footer, #header, #nav .container-fluid, #site-slogan, #myCarousel h3, .product-info, .promo-gallery, .location-section, .gallery, .breadcrumb-and-search {
     padding-right: 4%;
@@ -823,14 +833,17 @@ hr {
     height: 8px; }
 
   #carousel {
-    height: 250px; }
+    height: 250px !important; }
+    #carousel h3 {
+      font-size: 1.2em !important;
+      width: 100% !important; }
     #carousel img {
-      width: 160px; }
+      width: 160px !important; }
     #carousel p {
       display: none; }
     #carousel .btn {
-      font-size: 1em;
-      width: 80px; } }
+      font-size: 1em !important;
+      width: 80px !important; } }
 .loader-top {
   height: 100vh;
   width: 100vw;
