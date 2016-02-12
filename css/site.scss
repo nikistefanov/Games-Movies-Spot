@@ -2,7 +2,7 @@
 @import 'resets';
 // @import 'media-queries';
 .user-nav {
-  display:  none !important;
+  display: none !important;
 }
 body {
   @extend %reset;
@@ -99,7 +99,7 @@ hr {
     color: white;
     width: 250px;
     position: relative;
-    top: -29px;
+    top: -30px;
     border-radius: 20px;
     background: url(../images/btn-down.png) no-repeat center !important;
   }
@@ -167,6 +167,7 @@ hr {
 #nav {
   color: white;
   background: $navbar-background-color;
+  margin-left: 16%;
   border-radius: 0;
   border: 0;
   margin-bottom: 0;
@@ -249,14 +250,14 @@ hr {
   margin-top: 10px;
   h3,
   p {
-    width: 70%;
+    width: 60%;
   }
   h3 {
     font-size: $font-size-up;
     text-transform: uppercase;
   }
   p {
-    font-size: 1em;
+    font-size: 1.2em;
   }
   .btn-success {
     width: 250px;
@@ -270,7 +271,7 @@ hr {
 }
 #carousel {
   background: $site-color;
-  height: 350px;
+  height: 320px;
 }
 #myCarousel {
   height: 125px;
@@ -640,6 +641,7 @@ hr {
 }
 .carousel-indicators {
   background: url(../images/promo-gallery-background.png) no-repeat center;
+  //height: 30%;
   height: 35px;
   position: relative;
   bottom: 30px;
@@ -730,9 +732,6 @@ hr {
   }
 }
 @media (min-width: 768px) {
-  #nav {
-    margin-left: 16%;
-  }
   #main {
     .product-info {
       .left-section {
@@ -766,7 +765,7 @@ hr {
   }
   .footer {
     .comments {
-      width: 33% !important;
+      width: 33%;
     }
   }
   .breadcrumb-and-search {
@@ -817,8 +816,9 @@ hr {
     }
   }
   #carousel {
+    height: 280px;
     h3, p {
-      width: 80% !important;
+      width: 80%;
     }
     .btn {
       font-size: 1.1em;
@@ -854,7 +854,7 @@ hr {
   .navbar-collapse {
     position: relative;
     top: 50px;
-    height: 220px;
+    height: 225px;
   }
   .product-info,
   .breadcrumb {
@@ -881,17 +881,13 @@ hr {
     }
   }
   #carousel {
-    height: 250px !important;
-    h3 {
-      font-size: 1.3em !important;
-      width: 80% !important;
-    }
+    height: 280px;
     p {
-      display: none !important;
+      display: none;
     }
     .btn {
-      font-size: 0.9em !important;
-      width: 100px !important;
+      font-size: 0.9em;
+      width: 100px;
     }
   }
 }
@@ -956,7 +952,7 @@ hr {
   #nav {
     margin-left: 4%;
     .navbar-toggle {
-      right: 0 !important;
+      right: 0;
     }
     ul {
       float: left !important;
@@ -971,10 +967,9 @@ hr {
     }
   }
   #carousel {
-    height: 250px !important;
+    height: 230px;
     h3 {
-      font-size: 1.2em !important;
-      width: 100% !important;
+      width: 80%;
     }
     img {
       width: 160px;
@@ -983,8 +978,8 @@ hr {
       display: none;
     }
     .btn {
-      font-size: 1em !important;
-      width: 80px !important;
+      font-size: 1em;
+      width: 80px;
     }
   }
 }
@@ -1042,20 +1037,19 @@ hr {
     }
   }
   #carousel {
-    height: 250px !important;
+    height: 230px;
     h3 {
-      font-size: 1.2em !important;
-      width: 100% !important;
+      width: 100%;
     }
     img {
-      width: 160px !important;
+      width: 160px;
     }
     p {
       display: none;
     }
     .btn {
-      font-size: 1em !important;
-      width: 80px !important;
+      font-size: 1em;
+      width: 80px;
     }
   }
 }
