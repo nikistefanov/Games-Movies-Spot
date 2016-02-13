@@ -11,9 +11,6 @@ body, .my-nav {
   padding-right: 16%;
   padding-left: 16%; }
 
-.user-nav {
-  display: none !important; }
-
 body {
   font-size: 1.1em;
   font-family: "Myriad Pro", sans-serif; }
