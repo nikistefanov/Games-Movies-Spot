@@ -1,4 +1,4 @@
-var games = function() {
+var games = (function() {
   var Game = Parse.Object.extend("Game");
 
   function all() {
@@ -72,4 +72,4 @@ var games = function() {
     add: add,
     remove: remove
   };
-}();
+})();

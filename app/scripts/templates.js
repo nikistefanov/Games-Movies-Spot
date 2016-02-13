@@ -1,4 +1,4 @@
-var templates = function() {
+var templates = (function() {
   function load(name) {
     var url = 'app/templates/' + name + '.handlebars';
 
@@ -17,4 +17,4 @@ var templates = function() {
   return {
     load: load
   };
-}();
+})();

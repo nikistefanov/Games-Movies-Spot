@@ -1,4 +1,4 @@
-var converter = function() {
+var converter = (function() {
   function dbGameToGameVM(dbGame) {
     var owner = dbGame.get('owner');
     return {
@@ -38,4 +38,4 @@ var converter = function() {
     dbMovieToMovieVM: dbMovieToMovieVM,
     dbCommentToCommentVM: dbCommentToCommentVM
   };
-}();
+})();

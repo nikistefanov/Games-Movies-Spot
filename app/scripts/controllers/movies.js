@@ -1,4 +1,4 @@
-var movies = function() {
+var movies = (function() {
   var Movie = Parse.Object.extend("Movie");
   function all() {
     var query = new Parse.Query(Movie);
@@ -69,4 +69,4 @@ var movies = function() {
     add: add,
     remove: remove
   };
-}();
+})();

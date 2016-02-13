@@ -1,4 +1,4 @@
-var data = function() {
+var data = (function() {
   return {
     users: users,
     games: function() {
@@ -79,4 +79,4 @@ var data = function() {
     movies: movies,
     comments: comments
   };
-}();
+})();

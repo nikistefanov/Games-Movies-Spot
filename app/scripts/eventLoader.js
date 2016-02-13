@@ -1,4 +1,4 @@
-var eventLoader = function() {
+var eventLoader = (function() {
   var CONSTANTS = {
     PRODUCT_MIN_LENGTH: 3,
   };
@@ -191,4 +191,4 @@ var eventLoader = function() {
     collapseEvents: collapseEvents,
     commentsEvents: commentsEvents
   };
-}();
+})();

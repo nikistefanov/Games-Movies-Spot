@@ -1,4 +1,4 @@
-var users = function () {
+var users = (function () {
 
 var CONSTANTS = {
   NAME_MIN_LENGTH: 6,
@@ -50,4 +50,4 @@ var CONSTANTS = {
     logout: logout,
     current: current
   };
-}();
+})();

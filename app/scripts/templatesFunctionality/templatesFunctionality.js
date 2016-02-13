@@ -1,4 +1,4 @@
-var templatesFunctionality = function() {
+var templatesFunctionality = (function() {
   function loadHomeTemplate() {
     $('#active').removeAttr("id");
     var filename = window.location.href.substr(window.location.href.lastIndexOf("/") + 1);
@@ -104,4 +104,4 @@ var templatesFunctionality = function() {
     loadMovieInfoTemplate: loadMovieInfoTemplate,
     loadLocationTemplate: loadLocationTemplate
   };
-}();
+})();

@@ -1,4 +1,4 @@
-var comments = function() {
+var comments = (function() {
   var Comment = Parse.Object.extend("Comment");
 
     function all() {
@@ -22,7 +22,7 @@ var comments = function() {
           });
       });
     }
-    
+
     function get(id) {
       var commentId = id;
       var query = new Parse.Query(Comment);
@@ -63,4 +63,4 @@ var comments = function() {
       add: add,
       remove: remove
     };
-}();
+})();
